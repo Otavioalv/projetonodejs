@@ -1,0 +1,26 @@
+<h1>{{categoria.nome}}</h1>
+
+<div class="d-flex flex-wrap justify-content-center mt-5">
+    {{#each postagens}}   
+
+        <div class="card m-2 w-100">
+            <div class="card-body d-flex flex-column">
+                <h4>{{titulo}}</h4>
+                <h5>{{categoria.nome}}</h5>
+                <small>Slug: {{slug}}</small>
+                
+                <br/>
+                <small>Descrição: {{descricao}}</small>
+                <br/>
+                <a href="/postagem/{{slug}}">
+                    <button class="btn btn-success">Leia mais</button>
+                </a>
+                <br/>
+                <small>Data: {{data}}</small>
+            </div>
+        </div>
+
+    {{else}}
+        <h4 class="alert">Não há postegem</h4>
+    {{/each}}
+</div>

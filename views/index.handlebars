@@ -1,0 +1,44 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem-vindo {{#each user}}{{nome}}{{/each}} ao Blog do Node</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  
+  {{#if user}}
+  {{else}}
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" role="button" href="usuario/registro">Crie uma contar</a>
+  </p>
+  {{/if}}
+</div>
+
+<hr>
+
+<h2>Postagens recenter</h2>
+
+
+
+<div class="d-flex flex-wrap justify-content-center mt-5">
+    {{#each postagens}}   
+
+        <div class="card m-2 w-100">
+            <div class="card-body d-flex flex-column">
+                <h4>{{titulo}}</h4>
+                <h5>{{categoria.nome}}</h5>
+                <small>Slug: {{slug}}</small>
+                
+                <br/>
+                <small>Descrição: {{descricao}}</small>
+                <br/>
+                <a href="/postagem/{{slug}}">
+                    <button class="btn btn-success">Leia mais</button>
+                </a>
+                <br/>
+                <small>Data: {{data}}</small>
+            </div>
+        </div>
+
+    {{else}}
+        <h4 class="alert">Não há postegem</h4>
+    {{/each}}
+</div>

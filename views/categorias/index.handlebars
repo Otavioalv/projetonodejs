@@ -1,0 +1,22 @@
+<h2>Lista de categorias</h2>
+<hr> 
+<div class="d-flex flex-wrap justify-content-center mt-5">
+    {{#each categorias}}
+        <div class="card m-2 w-25">
+            <div class="card-body d-flex flex-column">
+                <h4>{{nome}}</h4>
+                <small>Slug: {{slug}}</small>
+                <br/>
+                <small>Data: {{date}}</small>
+                
+                <a href="/categorias/{{slug}}">
+                    <button class="btn btn-success">Postagens</button>
+                </a>
+            
+            </div>
+        </div>
+    {{else}}
+    <h4>Não existe Categoria...</h4>
+
+    {{/each}}
+</div>

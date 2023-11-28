@@ -1,0 +1,35 @@
+<h2>Postagens</h2>
+<hr>
+<button onclick="window.location.href='/admin/postagens/add'" class="btn btn-success">
+    Nova Postagem
+</button>
+
+<div class="d-flex flex-wrap justify-content-center mt-5">
+    {{#each postagens}}   
+
+        <div class="card m-2 w-100">
+            <div class="card-body d-flex flex-column">
+                <h4>{{titulo}}</h4>
+                <h5>{{categoria.nome}}</h5>
+                <small>Slug: {{slug}}</small>
+                <br/>
+                <small>Conteudo: {{conteudo}}</small>
+                <br/>
+                <small>Data: {{data}}</small>
+                
+                <div class="mt-4 d-flex justify-content-around">
+                    <a href="/admin/postagens/edit/{{_id}}">
+                        <button class="btn btn-success">Edit</button>
+                    </a>
+
+                    <a href="/admin/postagens/deletar/{{_id}}">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    {{else}}
+        <h4 class="alert">Não há postegem</h4>
+    {{/each}}
+</div>

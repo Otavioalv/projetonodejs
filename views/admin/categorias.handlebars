@@ -1,0 +1,31 @@
+<h2>Lista de categorias</h2>
+<hr>
+<button onclick="window.location.href='/admin/categorias/add'" class="btn btn-success">Nova Categoria</button>
+
+<div class="d-flex flex-wrap justify-content-center mt-5">
+    {{#each categorias}}
+
+        <div class="card m-2 w-25">
+            <div class="card-body d-flex flex-column">
+                <h4>{{nome}}</h4>
+                <small>Slug: {{slug}}</small>
+                <br/>
+                <small>Data: {{date}}</small>
+                
+                <div class="mt-4 d-flex justify-content-around">
+                    <a href="/admin/categorias/edit/{{_id}}">
+                        <button class="btn btn-success">Edit</button>
+                    </a>
+
+                    <form action="/admin/categorias/deletar" method="POST">
+                        <input type="hidden" for="delete" name="id" value="{{_id}}">
+                        <button class="btn btn-danger" name="delete">Delete</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    {{else}}
+    <h4>Não existe Categoria...</h4>
+
+    {{/each}}
+</div>
