@@ -3,7 +3,9 @@ Este projeto foi desenvolvido durante um curso de Node.js, enquanto aprendia sob
 ---
 
 ## Configuração
-Siga os passos abaixo para configurar e executar o projeto em seu ambiente local.
+> [!CAUTION]
+> **Siga os passos abaixo para configurar e executar o projeto em seu ambiente local.**
+
 
 ### Pré-requisitos
 
