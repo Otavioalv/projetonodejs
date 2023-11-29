@@ -22,7 +22,7 @@
     const passport = require('passport');
     require('./config/auth')(passport);
 
-    const db = require('config/db');
+    const db = require('./config/db');
 
 // Configurações 
     // Sessão app.use() criação e configuração de midlleware
@@ -58,7 +58,7 @@
     // mongoose
     mongoose.Promise = global.Promise;
     
-    mongoose.connect('mongodb://127.0.0.1:27017/blogapp', {}).then(() => {
+    mongoose.connect(db.mongoURI, {}).then(() => {
         console.log("Conectado ao bando de dados....");
     }).catch((err) => {
         console.log("Houve um erro >>> ", err);
