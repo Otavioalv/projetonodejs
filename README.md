@@ -1,77 +1,101 @@
-NodeApp
-Este projeto foi desenvolvido durante um curso de NodeJs enquanto aprendia sobre NodeJs, MongoDB e Mysql. O objetivo era criar um CRUD, cadastro de usuarios, e permisões administrativas onde somente adms poderiam acesar conteudos especificos.
+# NodeApp
+Este projeto foi desenvolvido durante um curso de Node.js, enquanto aprendia sobre Node.js, MongoDB e MySQL. O objetivo era criar um CRUD, cadastro de usuários e permissões administrativas, onde apenas administradores poderiam acessar conteúdos específicos.
+---
 
-Configuração
+## Configuração
 Siga os passos abaixo para configurar e executar o projeto em seu ambiente local.
 
-Pré-requisitos
-Node.js instalado
-MongoDB instalado
-Seu editor de texto preferido (recomendado: Visual Studio Code)
-Instalação
-Clone o repositório:
+### Pré-requisitos
 
-bash
-Copy code
+* **Node.js instalado**
+* **MongoDB instalado**
+* **Seu editor de texto preferido (recomendado: Visual Studio Code)**
+
+
+### Instalação
+
+* **Abra um termial na pasta da sua escolha e clone o repositório:**
+
+```
 git clone https://github.com/seu-usuario/seu-projeto.git
-Abra o diretório do projeto no seu editor de texto:
+```
 
-bash
-Copy code
-cd seu-projeto
+* **Abra o diretório do projeto no seu editor de texto:**
+
+```
+cd local-do-projeto
+```
+
+```
 code .
-No terminal, instale as dependências:
+```
 
-bash
-Copy code
+* **No terminal, instale as dependências:**
+
+```
 npm install
-Banco de Dados
-Inicie o MongoDB em um terminal:
+```
+### Banco de Dados
 
-bash
-Copy code
+* **Inicie o MongoDB em um terminal:**
+
+```
 mongod
-Em outro terminal, acesse o console do MongoDB:
+```
 
-bash
-Copy code
-mongo
-Crie um novo banco de dados e liste as coleções disponíveis:
+* **Em outro terminal, acesse o console do MongoDB:**
 
-bash
-Copy code
-use blogapp
-show collections
-Encontre o usuário que deseja tornar um administrador:
+```
+mongosh
+```
 
-bash
-Copy code
-db.usuarios.find()
-Atualize o usuário para ser um administrador:
+### Executando o Projeto
+> [!WARNING]
+> * **Certifique-se de que o MongoDB está em execução antes de iniciar o projeto.**
 
-bash
-Copy code
-db.usuarios.updateOne({nome: "nomeDoUsuario"}, {$set: {eAdmin: 1}})
-Executando o Projeto
-Inicie o servidor:
+* **Inicie o servidor:**
 
-bash
-Copy code
+```
 npm start
-Abra o navegador e acesse:
+```
 
-Página principal: http://localhost:8089
-Página de administração (apenas para administradores): http://localhost:8089/admin/postagens
-Página de categorias (apenas para administradores): http://localhost:8089/admin/categorias
-Criando Usuários e Realizando Login
-Siga os procedimentos padrão fornecidos pela aplicação para criar usuários e realizar logins.
-Acesso Administrativo
-Apenas usuários com permissões de administrador podem acessar as seguintes URLs:
+* **Abra o navegador e acesse:**
+[Página principal](http://localhost:8089)
 
-http://localhost:8089/admin/postagens
-http://localhost:8089/admin/categorias
-Lembre-se de fazer login com o usuário que foi configurado como administrador.
+### Criando Usuários e Realizando Login
+> [!NOTE]
+> * **Siga os procedimentos padrão fornecidos pela aplicação para criar usuários e realizar logins.**
 
-Observação: Certifique-se de que o MongoDB está em execução antes de iniciar o projeto.
+### Acesso Administrativo
+* **Apenas usuários com permissões de administrador podem acessar as seguintes URLs:**
+
+  - http://localhost:8089/admin/postagens
+  - http://localhost:8089/admin/categorias
+
+* **Para acessá-los, faça login com o usuário que foi configurado como administrador.**
 
 
+### Administração
+* **No console do MongoDb liste as coleções disponíveis no banco de dados:**
+
+```
+show dbs
+```
+```
+use blogapp
+```
+```
+show collections
+```
+
+* **Encontre o usuário que deseja tornar um administrador:**
+
+```
+db.usuarios.find()
+```
+
+* **Atualize o usuário para ser um administrador:**
+
+```
+db.usuarios.updateOne({nome: "nomeDoUsuario"}, {$set: {eAdmin: 1}})
+```
